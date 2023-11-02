@@ -9,9 +9,9 @@ var highColor = [234, 78, 0];
 
 function setup() {
   // Set a fixed canvas size to fit your desired page layout
-  var canvasWidth = 1000;
-  var canvasHeight = 1000;
-  createCanvas(canvasWidth, canvasHeight);
+  // var canvasWidth = 1000;
+  // var canvasHeight = 1000;
+  createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
   noStroke();
   // stroke(150)
@@ -70,24 +70,13 @@ function drawRectangles() {
       img.loadPixels();
       pop();
       
-      //CITY LABELS
-//       push();
-//       // blendMode(MULTIPLY);
-//       textAlign(LEFT, CENTER);
-//       var city = weatherData[cityIndex].name;
-//       fill(220);
-//       textSize(16);
-//       text(city, positionX + offset/9, positionY + offset/8);
-            
-//       fill(220);
-//       textSize(16);
-//       text('feels like ' + feelsLikeTemp, positionX + offset/9, positionY + offset/8 + 20);
-//       pop();
-
-      
       
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
