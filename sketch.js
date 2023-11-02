@@ -8,13 +8,9 @@ var lowColor = [16, 193, 201];
 var highColor = [234, 78, 0];
 
 function setup() {
-  // Set a fixed canvas size to fit your desired page layout
-  // var canvasWidth = 1000;
-  // var canvasHeight = 1000;
   createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
   noStroke();
-  // stroke(150)
   blendMode(OVERLAY);
 
   // Load weather data for each city
@@ -66,17 +62,15 @@ function drawRectangles() {
       var c2 = lerpColor(color(lowColor), color(highColor), s2);
       
       fill(c2);
-      img = circle(positionX + offset, positionY + offset, rectangleHeight);
-      img.loadPixels();
+      circle(positionX + offset, positionY + offset, rectangleHeight);
       pop();
-      
-      
     }
   }
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  drawRectangles(); // Redraw the rectangles on window resize
 }
 
 function draw() {
